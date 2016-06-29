@@ -16,15 +16,18 @@ public class Main extends Canvas implements Runnable {
 	private static final long serialVersionUID = 1L;
 	public static int width = 960;
 	public static int height = width / 16 * 9;
+<<<<<<< Updated upstream
 	public String title = ("Pixel Physics Engine");
 
+=======
+	
+>>>>>>> Stashed changes
 	public boolean running = false;
-
+	
 	private BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
 	private int[] pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
 
 	public Render render;
-	
 	Thread thread;
 	private JFrame frame;
 
@@ -116,7 +119,7 @@ public class Main extends Canvas implements Runnable {
 
 		main.frame = new JFrame();
 		main.frame.setResizable(false);
-		main.frame.setTitle("Pixel Physics Engine");
+		main.frame.setTitle("Pixel Physics Engine ");
 		main.frame.add(main);
 		main.frame.pack();
 		main.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
