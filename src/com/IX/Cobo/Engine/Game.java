@@ -11,17 +11,13 @@ import javax.swing.JFrame;
 
 import com.IX.Cobo.Engine.Render.Render;
 
-public class Main extends Canvas implements Runnable {
+public class Game extends Canvas implements Runnable {
 
 	private static final long serialVersionUID = 1L;
 	public static int width = 960;
 	public static int height = width / 16 * 9;
-<<<<<<< Updated upstream
 	public String title = ("Pixel Physics Engine");
 
-=======
-	
->>>>>>> Stashed changes
 	public boolean running = false;
 	
 	private BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
@@ -31,7 +27,7 @@ public class Main extends Canvas implements Runnable {
 	Thread thread;
 	private JFrame frame;
 
-	public Main() {
+	public Game() {
 		Dimension size = new Dimension(width, height);
 		setPreferredSize(size);
 		
@@ -115,18 +111,18 @@ public class Main extends Canvas implements Runnable {
 	}
 
 	public static void main(String[] args) {
-		Main main = new Main();
+		Game game = new Game();
 
-		main.frame = new JFrame();
-		main.frame.setResizable(false);
-		main.frame.setTitle("Pixel Physics Engine ");
-		main.frame.add(main);
-		main.frame.pack();
-		main.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		main.frame.setLocationRelativeTo(null);
-		main.frame.setVisible(true);
+		game.frame = new JFrame();
+		game.frame.setResizable(false);
+		game.frame.setTitle("Pixel Physics Engine ");
+		game.frame.add(game);
+		game.frame.pack();
+		game.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		game.frame.setLocationRelativeTo(null);
+		game.frame.setVisible(true);
 		
-		main.start();
+		game.start();
 
 	}
 }

@@ -5,7 +5,7 @@ public class Render {
 	private int width, height;	
 	public int[] pixels;
 	
-	int xtime = 0, ytime = 0;
+	int xtime = 10, ytime = 10;
 	int counter = 0;
 	
 	public Render(int width, int height) {
