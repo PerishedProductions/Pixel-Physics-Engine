@@ -1,10 +1,17 @@
 package com.IX.Cobo.Engine;
 
-public class Main {
+public class Main implements Runnable{
 
-	public static void main(String[] args) {
+	public static int width = 1280;
+	public static int height = 720;
+	
+	public void run() {
 		
-		System.out.println("Lets get started");
 	}
 	
+	public static void main(String[] args) {
+		
+		
+		
+	}
 }
