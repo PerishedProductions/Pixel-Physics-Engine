@@ -16,6 +16,7 @@ public class Main extends Canvas implements Runnable {
 	private static final long serialVersionUID = 1L;
 	public static int width = 960;
 	public static int height = width / 16 * 9;
+	public String title = ("Pixel Physics Engine");
 
 	public boolean running = false;
 
@@ -53,8 +54,11 @@ public class Main extends Canvas implements Runnable {
 	public void run() {
 		while (running) {
 			long lastTime = System.nanoTime();
+			long timer = System.currentTimeMillis();
 			double ns = 1000000000.0 / 60.0;
 			double delta = 0;
+			int frames = 0;
+			int ticks = 0;
 			
 		    while (running) {
 		    	long now = System.nanoTime();
@@ -63,18 +67,28 @@ public class Main extends Canvas implements Runnable {
 		    	lastTime = now;
 		    	
 		    	while(delta >= 1) {
-		    		update();
+		    		tick();
+					ticks++;
 		    		delta--;
 		    	}
 		    	
 		        render();
+		        frames++;
+
+				if (System.currentTimeMillis() - timer > 1000) {
+					timer += 1000;
+					System.out.println(ticks + " ticks, " + frames + " fps");
+					frame.setTitle(title + "  |  " + ticks + " ticks, " + frames + " fps");
+					ticks = 0;
+					frames = 0;
+				}
 		    }
 		    
 		    stop();
 		}
 	}
 
-	public void update() {
+	public void tick() {
 	}
 
 	public void render() {
